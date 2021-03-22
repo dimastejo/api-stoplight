@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Api Authentication",
+    "version": "1.0",
+    "description": "Api for authentication",
+    "contact": {
+      "name": "Dimas",
+      "url": "https://slickrocksolutions.com",
+      "email": "dimastejob@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost/api-stoplight/api/auth.php"
+    }
+  ],
+  "paths": {
+    "/users/{userId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "integer"
+          },
+          "name": "userId",
+          "in": "path",
+          "required": true,
+          "description": "Id of an existing user."
+        }
+      ]
+    },
+    "": {
+      "parameters": []
+    },
+    "/": {
+      "post": {
+        "summary": "Login",
+        "tags": [],
+        "responses": {},
+        "operationId": "post"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "title": "User",
+        "type": "object",
+        "description": "",
+        "x-examples": {
+          "Alice Smith": {
+            "id": 142,
+            "firstName": "Alice",
+            "lastName": "Smith",
+            "email": "alice.smith@gmail.com",
+            "dateOfBirth": "1997-10-31",
+            "emailVerified": true,
+            "signUpDate": "2019-08-24"
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the given user."
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "username",
+          "password"
+        ]
+      }
+    },
+    "securitySchemes": {}
+  }
+}
