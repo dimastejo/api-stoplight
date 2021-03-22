@@ -39,7 +39,8 @@ function validate_token($token)
 
 $data = [
     'id' => $tokenResponse,
-    'name' => 'Dimas'
+    'name' => 'Dimas',
+    'email' => 'dimastejob@gmail.com',
 ];
 
 echo json_encode($data);
