@@ -1,0 +1,47 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Maintenance Log",
+    "version": "1.0",
+    "description": "Get all maintenance log data"
+  },
+  "servers": [
+    {
+      "url": "http://localhost/api-stoplight/api/get-data.php"
+    }
+  ],
+  "paths": {
+    "/users/{userId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "integer"
+          },
+          "name": "userId",
+          "in": "path",
+          "required": true,
+          "description": "Id of an existing user."
+        }
+      ]
+    },
+    "/user": {},
+    "/": {
+      "get": {
+        "summary": "get all maintenace log",
+        "tags": [],
+        "responses": {},
+        "operationId": "get",
+        "description": "Get all maintenance log data"
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "token": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
