@@ -19,7 +19,7 @@ function split_token_from_auth_header($token)
 function validate_token($token)
 {
     if (empty($token)) {
-        echo 'ax';
+        echo 'axa';
         return [
             "status" => 400,
             "error" => "Token is missing"
